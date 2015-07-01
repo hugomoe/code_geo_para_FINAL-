@@ -99,7 +99,7 @@ void apply_homo_final(float *img,float *img_f,int w,int h,int w_f,int h_f,double
 
 	double *a = *H;
 
-	if(a[6]==0 && a[7]==0){ //cas d'une affinité
+	if(a[8]!=0 && a[6]/a[8]==0 && a[7]/a[8]==0){ //cas d'une affinité
         for(int i=0;i<8;i++){a[i]=a[i]/a[8];}
         a[8]=1.;
 		double A[6];
